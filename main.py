@@ -1,13 +1,20 @@
 import streamlit as st
+import os
 
+print(os.listdir('algorithm'))
 # st.page_link("1.py", label="introduction")
 # st.page_link("https://www.google.com",label="google")
 pages={
-    'algorithm':[
-        st.Page('1.py', title='two'),
-        st.Page('2.py', title='secondone'),
-        st.Page('august2.py', title='8월2일 숙제(완탐:checkbox,radio,code)')
-        ]
+    'intro':[],
+    'algorithm':[],
+    'dataScience':[],
+    'streamlitEx':[],
+    'py실습':[]
     }
+
+folders=list(pages.keys())
+for folder in folders:
+    for file in os.listdir(folder):
+        pages[folder].append(st.Page("./"+folder+"/"+file,title=file))
 pg=st.navigation(pages)
 pg.run()
