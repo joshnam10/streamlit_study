@@ -1,0 +1,21 @@
+def 이항분포(n):
+
+    l=[]
+    a=range(n)
+    for _ in a:
+        d=0
+        for i in range(4):
+            d+=random.choice([-1,1])
+        l.append(d)
+
+    import matplotlib.pyplot as plt
+    x=range(-4,5,2)
+    y=[]
+    for i in x:
+        y.append(l.count(i))
+
+    fig,ax=plt.subplots()
+
+    plt.title(f'{n} marbles')
+    ax.bar(x,y)
+    st.pyplot(fig)

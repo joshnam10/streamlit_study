@@ -1,0 +1,8 @@
+
+import random
+d=0
+
+for i in range(4):
+    d+=random.choice([-1,1])
+
+st.write(d)

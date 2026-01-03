@@ -1,0 +1,31 @@
+n=4
+def p(k):
+    ttl=0
+    cnt=0
+    coins=[-1]*n
+    for i in range(2):
+        coins[0]=i
+        for i1 in range(2):
+            coins[1]=i1
+            for i2 in range(2):
+                coins[2]=i2
+                for i3 in range(2):
+                    coins[3]=i3
+                    #print(coins)
+                    ttl+=1
+                    if coins.count(0) == k:
+                        cnt+=1
+
+    return cnt/ttl
+
+x=[0,1,2,3,4]
+y=[]
+for i in x:
+    y.append(p(i))
+
+
+fig,ax=plt.subplots()
+ax.bar(x,y)
+st.pyplot(fig)
+
+

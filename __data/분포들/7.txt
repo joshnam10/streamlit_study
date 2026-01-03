@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+x=range(1,25)
+y=[]
+for i in x:
+
+    y.append(5**(i-1)/6**i)
+
+fig,ax=plt.subplots()
+
+ax.bar(x,y)
+st.pyplot(fig)

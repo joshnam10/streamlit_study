@@ -29,7 +29,7 @@ if st.button('정답확인'):
         st.error('정답아님')
 
 st.header('내가 제일 좋아하는 노래')
-st.audio('Soda Pop.mp3',autoplay=True)
+st.video('https://www.youtube.com/watch?v=pQsF3pzOc54&list=RDpQsF3pzOc54&start_radio=1')
 
 st.header('마무리')
 st.write('이건 남기현이 만든 페이지다')

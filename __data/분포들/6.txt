@@ -1,0 +1,19 @@
+from collections import Counter
+l=[]
+for i in range(100000):
+
+    score=0
+    for i in range(10):
+        score+=random.choice([0,0,0,1])
+
+    l.append(score)
+
+x=range(0,11)
+y=[]
+for i in x:
+    y.append(l.count(i)/100000)
+
+
+fig,ax=plt.subplots()
+ax.bar(x,y)
+st.pyplot(fig)
