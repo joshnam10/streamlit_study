@@ -1,0 +1,35 @@
+stage= '''001111
+101111
+100000
+101111
+100001
+111100'''.split('\n')
+record=set()
+record.add((0,0))
+
+x0,y0=0,0
+x1,y1=0,0
+x2,y2=5,5
+direction=[
+    [0,1], #동
+    [0,-1], #서
+    [1,0], #남
+    [-1,0], #북
+]
+l=[(x1,y1)] #지금 검사할것들
+while 1:
+
+    cx,cy=l.pop()
+    for dx,dy in direction:
+        nx=cx+dx
+        ny=cy+dy
+        if 0<=nx<6 and 0<=ny<6 and (nx,ny) not in record and stage[nx][ny]!='1':
+            l.append((nx,ny))
+
+            record.add((nx,ny))
+    print(l)
+
+    if len(l)==0:
+        break
+if (x2,y2) in record:
+    print('good')

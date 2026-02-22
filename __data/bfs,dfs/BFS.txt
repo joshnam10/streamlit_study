@@ -1,0 +1,12 @@
+a= [16]
+result=[]
+while 1:
+
+    number=a.pop(0)
+    if number>1:
+        a.append(number//2)
+        a.append(number//2)
+    result.append(str(a.copy()))
+    if not a:
+        break
+

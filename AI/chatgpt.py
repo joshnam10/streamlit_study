@@ -2,7 +2,10 @@ import streamlit as st
 import random
 import time
 from openai import OpenAI
-key='여기다 키를 입력하세요'
+import os
+
+key=os.environ['api_key']
+
 client = OpenAI(api_key=key)
 st.write("Streamlit loves LLMs! 🤖 [Build your own chat app](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps) in minutes, then make it powerful by adding images, dataframes, or even input widgets to the chat.")
 
